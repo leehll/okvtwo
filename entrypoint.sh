@@ -5,11 +5,6 @@ DIR_CONFIG="/etc/v2ray"
 DIR_RUNTIME="/usr/bin"
 DIR_TMP="$(mktemp -d)"
 
-ID=aad79984-576c-4798-b0d1-4b76fe6bd26c
-AID=64
-WSPATH=/
-PORT=80
-
 # Write V2Ray configuration
 cat << EOF > ${DIR_TMP}/heroku.json
 {
@@ -19,7 +14,7 @@ cat << EOF > ${DIR_TMP}/heroku.json
         "settings": {
             "clients": [{
                 "id": "${ID}",
-                "alterId": ${AID}
+                "alterId": 0
             }]
         },
         "streamSettings": {
